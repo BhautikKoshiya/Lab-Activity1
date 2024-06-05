@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Form, Button, Row, Col, Card } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 
 function Home() {
-  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: '',
