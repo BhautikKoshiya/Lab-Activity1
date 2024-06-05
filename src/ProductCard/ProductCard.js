@@ -92,7 +92,7 @@ function ProductCard({ product }) {
     try {
       await axios.put(`https://q8666rv2t0.execute-api.us-east-1.amazonaws.com/prod/updateProduct`, formData);
       setIsModalOpen(false);
-      // window.location.reload();
+      window.location.reload();
       
     } catch (error) {
       console.error('Error updating product:', error);
