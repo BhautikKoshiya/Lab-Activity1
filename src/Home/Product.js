@@ -1,8 +1,8 @@
 // Inside Products.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ProductCard from './ProductCard/ProductCard';
-import './ProductCard/ProductCard.css'
+import ProductCard from '../ProductCard/ProductCard';
+import '../ProductCard/ProductCard.css'
 
 function Products() {
   const [products, setProducts] = useState([]);

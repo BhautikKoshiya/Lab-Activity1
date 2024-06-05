@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Form, Button, Row, Col, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -43,10 +46,17 @@ function Home() {
     }
   };
 
+  const onClickProduct = async (e) => {
+    window.location.href = '/products';
+  };  
+
   return (
     <Container>
       <Row className="justify-content-md-center">
         <Col md={6}>
+        <Button variant="primary" type="submit" className="w-100" onClick={onClickProduct}>
+                  Click here to Check All Product
+        </Button>
           <Card className="mt-5">
             <Card.Body>
               <Card.Title className="text-center">Add New Product</Card.Title>
