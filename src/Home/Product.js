@@ -1,4 +1,3 @@
-// Inside Products.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductCard from '../ProductCard/ProductCard';

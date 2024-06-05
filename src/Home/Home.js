@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Form, Button, Row, Col, Card } from 'react-bootstrap';
-
+import { useNavigate } from 'react-router-dom';
 function Home() {
 
   const [formData, setFormData] = useState({
@@ -13,7 +13,7 @@ function Home() {
     offer: '',
     image: '',
   });
-
+  const navigate =  useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -38,14 +38,17 @@ function Home() {
 
     try {
       await axios.post('https://q8666rv2t0.execute-api.us-east-1.amazonaws.com/prod/createProduct', formData); 
-      window.location.href = '/products';
+      // window.location.href = '/products';
+      navigate("/products")
+
     } catch (error) {
       console.error('Error creating product:', error);
     }
   };
 
   const onClickProduct = async (e) => {
-    window.location.href = '/products';
+    // window.location.href = '/products';
+    navigate("/products")
   };  
 
   return (
