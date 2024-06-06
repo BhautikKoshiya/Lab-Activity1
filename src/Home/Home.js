@@ -35,12 +35,14 @@ function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      await axios.post('https://q8666rv2t0.execute-api.us-east-1.amazonaws.com/prod/createProduct', formData); 
-      // window.location.href = '/products';
-      navigate("/products")
-
+      const response = await axios.post('https://q8666rv2t0.execute-api.us-east-1.amazonaws.com/prod/createProduct', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      navigate("/products");
     } catch (error) {
       console.error('Error creating product:', error);
     }
