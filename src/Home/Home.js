@@ -37,7 +37,7 @@ function Home() {
     e.preventDefault();
   
     try {
-      const response = await axios.post('https://q8666rv2t0.execute-api.us-east-1.amazonaws.com/prod/createProduct', formData, {
+      await axios.post('https://q8666rv2t0.execute-api.us-east-1.amazonaws.com/prod/createProduct', formData, {
         headers: {
           'Content-Type': 'application/json',
         },
